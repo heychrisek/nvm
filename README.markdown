@@ -47,11 +47,11 @@ Eg: `curl ... | NVM_DIR="path/to/nvm" bash`
 
 <sub>*NB. The installer can use `git`, `curl`, or `wget` to download `nvm`, whatever is available.*</sub>
 
-Note: On OS X, if you get `nvm: command not found` after running the install script, your system may not have a [.bash_profile file] where the command is set up. Simple create one with `touch ~/.bash_profile` and run the install script again.
+Note: On OS X, if you get `nvm: command not found` after running the install script, your system may not have a [.bash_profile file] where the command is set up. Simply create one with `touch ~/.bash_profile` and run the install script again.
 
 ### Verify installation
 
-To verify that nvm has been installed, do
+To verify that nvm has been installed, do:
 
     command -v nvm
 
@@ -147,7 +147,7 @@ If you want to see what versions are available to install:
 
     nvm ls-remote
 
-To restore your PATH, you can deactivate it.
+To restore your PATH, you can deactivate it:
 
     nvm deactivate
 
@@ -235,15 +235,15 @@ Tests are written in [Urchin]. Install Urchin (and other dependencies) like so:
 There are slow tests and fast tests. The slow tests do things like install node
 and check that the right versions are used. The fast tests fake this to test
 things like aliases and uninstalling. From the root of the nvm git repository,
-run the fast tests like this.
+run the fast tests like this:
 
     npm run test/fast
 
-Run the slow tests like this.
+Run the slow tests like this:
 
     npm run test/slow
 
-Run all of the tests like this
+Run all of the tests like this:
 
     npm test
 
@@ -253,7 +253,7 @@ Nota bene: Avoid running nvm while the tests are running.
 
 To activate, you need to source `bash_completion`:
 
-  	[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+    [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
 Put the above sourcing line just below the sourcing line for NVM in your profile (`.bashrc`, `.bash_profile`).
 
@@ -261,34 +261,34 @@ Put the above sourcing line just below the sourcing line for NVM in your profile
 
 nvm
 
-	$ nvm [tab][tab]
+    $ nvm [tab][tab]
     alias               deactivate          install             ls                  run                 unload
     clear-cache         exec                list                ls-remote           unalias             use
     current             help                list-remote         reinstall-packages  uninstall           version
 
 nvm alias
 
-	$ nvm alias [tab][tab]
-	default
+    $ nvm alias [tab][tab]
+    default
 
-	$ nvm alias my_alias [tab][tab]
-	v0.6.21        v0.8.26       v0.10.28
+    $ nvm alias my_alias [tab][tab]
+    v0.6.21        v0.8.26       v0.10.28
 
 nvm use
 
-	$ nvm use [tab][tab]
-	my_alias        default        v0.6.21        v0.8.26       v0.10.28
+    $ nvm use [tab][tab]
+    my_alias        default        v0.6.21        v0.8.26       v0.10.28
 
 nvm uninstall
 
-	$ nvm uninstall [tab][tab]
-	my_alias        default        v0.6.21        v0.8.26       v0.10.28
+    $ nvm uninstall [tab][tab]
+    my_alias        default        v0.6.21        v0.8.26       v0.10.28
 
 ## Compatibility Issues
 `nvm` will encounter some issues if you have some non-default settings set. (see [#606](/../../issues/606))
 The following are known to cause issues:
 
-Inside `~/.npmrc`
+Inside `~/.npmrc`:
 ```
 prefix='some/path'
 ```
@@ -312,7 +312,7 @@ Where's my 'sudo node'? Check out this link:
 
 https://github.com/creationix/nvm/issues/43
 
-On Arch Linux and other systems using python3 by default, before running *install* you need to
+On Arch Linux and other systems using python3 by default, before running *install* you need to:
 
       export PYTHON=python2
 
